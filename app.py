@@ -6,17 +6,17 @@ import pandas as pd
 import plotly.express as px
 import streamlit as st
 
-from ru_liquidity_sentinel.llm import generate_comment, simple_rag_answer
-from ru_liquidity_sentinel.pipeline import run_pipeline
-from ru_liquidity_sentinel.backtest import run_backtest
-from ru_liquidity_sentinel.utils import DATE_COL, project_root, status_ru
+from liquidity_sentinel.llm import generate_comment, simple_rag_answer
+from liquidity_sentinel.pipeline import run_pipeline
+from liquidity_sentinel.backtest import run_backtest
+from liquidity_sentinel.utils import DATE_COL, project_root, status_ru
 
 ROOT = project_root()
 OUTPUT = ROOT / "output"
 DATA = ROOT / "data" / "raw"
 
-st.set_page_config(page_title="RU Liquidity Sentinel", layout="wide")
-st.title("RU Liquidity Sentinel")
+st.set_page_config(page_title=" liquidity sentinel", layout="wide")
+st.title(" liquidity sentinel")
 st.caption("Система раннего выявления стресса ликвидности рублёвого денежного рынка")
 
 if st.sidebar.button("Пересчитать LSI") or not (OUTPUT / "lsi_history.csv").exists():

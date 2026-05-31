@@ -50,7 +50,7 @@ token.json
 
 # Generated project data and reports
 # Raw demo CSV files are intentionally kept in git: data/raw/*.csv
-# Recreate these files with: python -m ru_liquidity_sentinel.cli run
+# Recreate these files with: python -m liquidity_sentinel.cli run
 /data/processed/*
 !/data/processed/.gitkeep
 /output/*

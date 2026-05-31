@@ -9,9 +9,9 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT / "src"))
 
-from ru_liquidity_sentinel.backtest import run_backtest
-from ru_liquidity_sentinel.dashboard import build_dashboard_html
-from ru_liquidity_sentinel.pipeline import run_pipeline
+from liquidity_sentinel.backtest import run_backtest
+from liquidity_sentinel.dashboard import build_dashboard_html
+from liquidity_sentinel.pipeline import run_pipeline
 
 
 def check(condition: bool, message: str) -> None:

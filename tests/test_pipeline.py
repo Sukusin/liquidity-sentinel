@@ -4,8 +4,8 @@ from pathlib import Path
 
 import pandas as pd
 
-from ru_liquidity_sentinel.backtest import run_backtest
-from ru_liquidity_sentinel.pipeline import run_pipeline
+from liquidity_sentinel.backtest import run_backtest
+from liquidity_sentinel.pipeline import run_pipeline
 
 
 def test_full_pipeline_and_backtest(tmp_path: Path) -> None:

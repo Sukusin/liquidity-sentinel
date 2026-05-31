@@ -82,7 +82,7 @@ def build_dashboard_html(output_dir: Path | None = None, html_path: Path | None 
         if col in history.columns:
             fig.add_trace(go.Scatter(x=history[DATE_COL], y=history[col], mode="lines", name=name), row=4, col=1)
 
-    fig.update_layout(height=1050, title="RU Liquidity Sentinel - дашборд раннего предупреждения", hovermode="x unified")
+    fig.update_layout(height=1050, title=" liquidity sentinel - дашборд раннего предупреждения", hovermode="x unified")
     fig.update_yaxes(range=[0, 100], row=1, col=1)
 
     comment = generate_comment(latest)
@@ -104,7 +104,7 @@ def build_dashboard_html(output_dir: Path | None = None, html_path: Path | None 
 <html lang="ru">
 <head>
   <meta charset="utf-8">
-  <title>RU Liquidity Sentinel</title>
+  <title> liquidity sentinel</title>
   <style>
     body {{ font-family: Arial, sans-serif; margin: 24px; color: #17212b; }}
     .cards {{ display: grid; grid-template-columns: repeat(3, minmax(180px, 1fr)); gap: 16px; margin-bottom: 20px; }}
@@ -118,7 +118,7 @@ def build_dashboard_html(output_dir: Path | None = None, html_path: Path | None 
   </style>
 </head>
 <body>
-  <h1>RU Liquidity Sentinel</h1>
+  <h1> liquidity sentinel</h1>
   <p class="muted">Система раннего выявления напряжения ликвидности по пяти модулям и интерпретируемой агрегации LSI.</p>
   <div class="cards">
     <div class="card"><div class="muted">Текущий LSI</div><div class="metric">{latest['lsi']:.1f}</div></div>

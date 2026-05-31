@@ -11,7 +11,7 @@ from .utils import project_root
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="RU Liquidity Sentinel")
+    parser = argparse.ArgumentParser(description=" liquidity sentinel")
     sub = parser.add_subparsers(dest="command", required=True)
 
     gen = sub.add_parser("generate-sample", help="Generate demo CSV data")
