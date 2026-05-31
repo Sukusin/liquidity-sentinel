@@ -24,12 +24,12 @@
 ## Структура
 
 ```text
-ru_liquidity_sentinel/
+liquidity_sentinel/
 ├── app.py                          # Streamlit-дашборд
 ├── check_project.py                # быстрая проверка проекта
 ├── data/raw/                       # входные CSV
 ├── output/                         # результаты расчёта
-├── src/ru_liquidity_sentinel/
+├── src/liquidity_sentinel/
 │   ├── aggregation.py              # расчёт LSI и вкладов модулей
 │   ├── backtest.py                 # backtest и sensitivity analysis
 │   ├── dashboard.py                # статический HTML-дашборд
@@ -47,7 +47,7 @@ ru_liquidity_sentinel/
 Проще всего запускать через `uv`.
 
 ```bash
-cd ru_liquidity_sentinel
+cd liquidity_sentinel
 uv sync
 uv run python check_project.py
 ```
@@ -63,13 +63,13 @@ output/dashboard.html
 Streamlit-версия запускается так:
 
 ```bash
-uv run streamlit run app.py
+PYTHONPATH=src streamlit run app.py
 ```
 
 Если `uv` не используется, можно запустить через обычный `venv`:
 
 ```bash
-cd ru_liquidity_sentinel
+cd liquidity_sentinel
 python -m venv .venv
 source .venv/bin/activate           # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
@@ -87,16 +87,16 @@ PYTHONPATH=src streamlit run app.py
 
 ```bash
 # создать демо-данные, если в data/raw/ пока ничего нет
-uv run python -m ru_liquidity_sentinel.cli generate-sample
+uv run python -m liquidity_sentinel.cli generate-sample
 
 # посчитать сигналы М1-М5 и LSI
-uv run python -m ru_liquidity_sentinel.cli run
+uv run python -m liquidity_sentinel.cli run
 
 # сделать backtest и sensitivity analysis
-uv run python -m ru_liquidity_sentinel.cli backtest
+uv run python -m liquidity_sentinel.cli backtest
 
 # собрать статический dashboard.html
-uv run python -m ru_liquidity_sentinel.cli dashboard
+uv run python -m liquidity_sentinel.cli dashboard
 ```
 
 Для запуска без `uv` нужно добавить `PYTHONPATH=src` перед командами.
